@@ -1,19 +1,25 @@
-if (localStorage.getItem("books")) {
-  var books = JSON.parse(localStorage.getItem("books"));
-} else {
-  localStorage.setItem("books", JSON.stringify([]));
-  //add your first book
-}
-
-/* ------------------------------ routing ------------------------------ */
 const $ = (id) => {
   return document.getElementById(id);
 };
-document.getElementsByClassName("addAnchor").addEventListener("click", () => {
+if (
+  localStorage.getItem("books") &&
+  localStorage.getItem("books")?.length !== 0
+) {
+  var books = JSON.parse(localStorage.getItem("books"));
+} else {
+  localStorage.setItem("books", JSON.stringify([]));
+  $("add-new").style.display = "block";
+}
+
+/* ------------------------------ routing ------------------------------ */
+
+$("addAnchor")?.addEventListener("click", () => {
   window.location.href = "/newbook.html";
   return;
 });
-
+$("add-new")?.addEventListener("click", () => {
+  document.location.href = "/newbook.html";
+});
 $("submit")?.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -42,7 +48,8 @@ const createRecord = (data, i) => {
 };
 
 /* --------------------------------------------------------------------- */
-
-books?.map((e, i) => {
-  $("tbody").appendChild(createRecord(e, i + 1));
-});
+if (location.pathname === "/index.html") {
+  books?.map((e, i) => {
+    $("tbody").appendChild(createRecord(e, i + 1));
+  });
+}
