@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+@layer components {
+  .heading {
+    @apply text-2xl font-semibold text-center;
+  }
+}
