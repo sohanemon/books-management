@@ -38,7 +38,7 @@
             class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
           >
             <li>
-              <a id="addAnchor" class="justify-between">
+              <a class="addAnchor justify-between">
                 Add
                 <span class="badge">New</span>
               </a>
@@ -70,6 +70,16 @@
       </table>
     </div>
     <!-- -------------------- recently added books end -------------------- -->
+
+    <!-- ------------------------ no books added if ------------------------ -->
+    <div
+      class="addAnchor text-4xl font-medium tracking-wide shadow-md rounded-lg pb-2 pt-10 px-8 w-max absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+    >
+      <h1>Please add some books</h1>
+      <button class="relative left-1/2 btn glass btn-ghost -translate-x-1/2">
+        Add new
+      </button>
+    </div>
 
     <script src="./scripts/script.js"></script>
   </body>

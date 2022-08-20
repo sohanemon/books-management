@@ -1,12 +1,15 @@
 if (localStorage.getItem("books")) {
   var books = JSON.parse(localStorage.getItem("books"));
-} else localStorage.setItem("books", JSON.stringify([]));
+} else {
+  localStorage.setItem("books", JSON.stringify([]));
+  //add your first book
+}
 
 /* ------------------------------ routing ------------------------------ */
 const $ = (id) => {
   return document.getElementById(id);
 };
-$("addAnchor")?.addEventListener("click", () => {
+document.getElementsByClassName("addAnchor").addEventListener("click", () => {
   window.location.href = "/newbook.html";
   return;
 });
